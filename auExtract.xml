@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MudletPackage>
+<MudletPackage version="1.001">
+	<TriggerPackage>
+		<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>auExtract</name>
+			<script></script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>0</conditonLineDelta>
+			<mStayOpen>0</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList />
+			<regexCodePropertyList />
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>If we're checking minerals</name>
+				<script></script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>return auExtract.isCheckingMinerals</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>4</integer>
+				</regexCodePropertyList>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>On Prompt</name>
+					<script>auExtract.stopCheckingMinerals()</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string></string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>7</integer>
+					</regexCodePropertyList>
+				</Trigger>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>Mineral Found</name>
+					<script>auExtract.testRoom(matches[2])</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>^(\w+)\s+.*$</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>1</integer>
+					</regexCodePropertyList>
+				</Trigger>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Start Checking Minerals</name>
+				<script>auExtract.startCheckingMinerals()</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>You spot the following minerals here:</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>0</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>We Extracted</name>
+				<script>auExtract.extracted()</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>^You kneel and collect chunks of earth, using a strong-smelling solvent to pull .* from the dirt and rock\. This delicate process completed, you set the minerals aside to dry\.$</string>
+					<string>You have already extracted minerals from this location.</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+					<integer>0</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Can't Extract</name>
+				<script>auExtract.failedExtract()</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>The environment here will not yield any minerals.</string>
+					<string>You find yourself unable to attempt extraction here.</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>0</integer>
+					<integer>0</integer>
+				</regexCodePropertyList>
+			</Trigger>
+		</TriggerGroup>
+	</TriggerPackage>
+	<TimerPackage />
+	<AliasPackage>
+		<AliasGroup isActive="yes" isFolder="yes">
+			<name>auExtract</name>
+			<script></script>
+			<command></command>
+			<packageName></packageName>
+			<regex></regex>
+			<Alias isActive="yes" isFolder="no">
+				<name>Main Command</name>
+				<script>local parts = {}
+
+for match in string.gmatch(matches[2], "%w+") do
+  table.insert(parts, match)
+end
+
+if parts[1] == "map" then
+  auExtract.toggleRecording()
+elseif parts[1] == "reset" then
+  auExtract.reset()
+elseif parts[1] == "go" then
+  auExtract.buildRooms()
+elseif parts[1] == "remove" then
+  auExtract.removeRoom(parts[2])
+else
+  auExtract.buildRooms(parts[1])
+end</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^au (.*)$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>Hint Command</name>
+				<script>cecho("&lt;gold&gt;AU:&lt;reset&gt; Available Commands\n")
+cecho("   &lt;DeepPink&gt;au go&lt;reset&gt;: Extract from all recorded rooms\n")
+cecho("   &lt;DeepPink&gt;au &lt;mineral&gt;&lt;reset&gt;: Extract from all rooms that provide the mineral\n")
+cecho("   &lt;DeepPink&gt;au &lt;area&gt;&lt;reset&gt;: Extract from all rooms in that area\n")
+cecho("   &lt;DeepPink&gt;au map&lt;reset&gt;: Toggle on/off mapping\n")
+cecho("   &lt;DeepPink&gt;au remove [roomid]&lt;reset&gt;: Removes a roomid from the map\n")
+cecho("   &lt;DeepPink&gt;au reset&lt;reset&gt;: Drop all rooms and start over\n")</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^au$</regex>
+			</Alias>
+		</AliasGroup>
+	</AliasPackage>
+	<ActionPackage />
+	<ScriptPackage>
+		<ScriptGroup isActive="yes" isFolder="yes">
+			<name>auExtract</name>
+			<packageName></packageName>
+			<script></script>
+			<eventHandlerList />
+			<Script isActive="yes" isFolder="no">
+				<name>auExtract Script</name>
+				<packageName></packageName>
+				<script>auExtract = auExtract or {}
+auExtract.minerals = {
+  antimony = true,
+  argentum = true,
+  arsenic = true,
+  aurum = true,
+  azurite = true,
+  bisemutum = true,
+  calamine = true,
+  calcite = true,
+  cinnabar = true,
+  cuprum = true,
+  dolomite = true,
+  ferrum = true,
+  gypsum = true,
+  magnesium = true,
+  malachite = true,
+  plumbum = true,
+  potash = true,
+  quartz = true,
+  quicksilver = true,
+  realgar = true,
+  stannum = true,
+}
+
+auExtract.dataFile = getMudletHomeDir() .. "/extractionData.json"
+auExtract.currentRoomTarget = nil
+auExtract.isCheckingMinerals = false
+auExtract.isRecording = false
+auExtract.extracting = nil
+auExtract.roomsToWalk = auExtract.roomsToWalk or {}
+auExtract.isWalkingRooms = false
+auExtract.roomVisitedCache = {}
+auExtract.settings = {
+  rooms = {},
+  roomsVisited = {}
+}
+auExtract.startLocation = nil
+
+auExtract.db = db:create("auextract", {
+  
+})
+
+
+function auExtract.buildRooms(filter)
+  local filterFn = auExtract.filterEmpty
+  auExtract.startLocation = mmp.currentroom
+
+  if auExtract.minerals[filter] then
+    cecho(("\n&lt;gold&gt;AU:&lt;reset&gt; Finding rooms that provide &lt;gold&gt;%s&lt;reset&gt;\n"):format(filter))
+    filterFn = auExtract.filterByMineral
+  elseif filter then
+    cecho(("\n&lt;gold&gt;AU:&lt;reset&gt; Finding areas like &lt;MediumSeaGreen&gt;%s&lt;reset&gt;\n"):format(filter))
+    filterFn = auExtract.filterByArea
+  else
+    cecho(("\n&lt;gold&gt;AU:&lt;reset&gt; Using all rooms.\n"):format(filter))
+  end
+
+  auExtract.roomsToWalk = {}
+
+  for _, room in ipairs(auExtract.settings.rooms) do
+    if filterFn(room, filter) and mmp.getPath(mmp.currentroom, room.room) then
+      table.insert(auExtract.roomsToWalk, room)
+    end
+  end
+
+  if #auExtract.roomsToWalk == 0 then
+    if filter then
+      cecho(("\n&lt;gold&gt;AU:&lt;reset&gt; Found &lt;red&gt;0&lt;reset&gt; rooms. Filter was: &lt;green&gt;%s&lt;reset&gt;\n"):format(filter))
+    else
+      cecho("\n&lt;gold&gt;AU:&lt;reset&gt; Found &lt;red&gt;0&lt;reset&gt; rooms\n")
+    end
+  else
+    cecho(("\n&lt;gold&gt;AU:&lt;reset&gt; Found &lt;green&gt;%s&lt;reset&gt; rooms. Here we go!\n"):format(#auExtract.roomsToWalk))
+    auExtract.isWalkingRooms = true
+    auExtract.nextRoom()
+
+    tempTimer(3600, function() cecho(("\n&lt;gold&gt;AU:&lt;reset&gt; It's been an hour since you last went our for minerals, FYI. :D\n"):format(#auExtract.roomsToWalk)) end)
+  end
+end
+
+function auExtract.createRoom(mineral)
+  return {
+    area = mmp.getAreaName(mmp.currentroom),
+    mineral = string.lower(mineral),
+    room = mmp.currentroom
+  }
+end
+
+function auExtract.done()
+  auExtract.roomsToWalk = {}
+  auExtract.currentRoomTarget = false
+  auExtract.isRecording = false
+  auExtract.isWalkingRooms = false
+
+  send("inr all")
+  mmp.gotoRoom(auExtract.startLocation)
+
+end
+
+function auExtract.extracted()
+  if auExtract.isRecording and auExtract.extracting then
+    auExtract.recordRoom(auExtract.extracting)
+    auExtract.extracting = nil
+  elseif auExtract.isWalkingRooms then
+    auExtract.nextRoom()
+  end
+end
+
+function auExtract.failedExtract()
+  if auExtract.isRecording and auExtract.extracting then
+    cecho("\n&lt;gold&gt;AU:&lt;reset&gt; Couldn't extract, so we're ignoring.\n")
+    auExtract.extracting = nil
+  elseif auExtract.isWalkingRooms then
+    auExtract.nextRoom()
+  end
+end
+
+function auExtract.filterByArea(room, area)
+  if string.match(string.lower(room.area), string.lower(area)) then return true end
+
+  return false
+end
+
+function auExtract.filterEmpty(room, mineral)
+  return true
+end
+
+function auExtract.filterByMineral(room, mineral)
+  if room.mineral == mineral then return true end
+
+  return false
+end
+
+function auExtract.load()
+  local saveFile = io.open(auExtract.dataFile, "r")
+
+  if not saveFile then
+    auExtract.save()
+    saveFile = io.open(auExtract.dataFile, "r")
+  end
+
+  local dataString = saveFile:read("*a")
+  saveFile:close()
+
+  auExtract.settings = yajl.to_value(dataString)
+
+  for _, roomnum in ipairs(auExtract.settings.roomsVisited) do
+    auExtract.roomVisitedCache[roomnum] = true
+  end
+end
+
+function auExtract.nextRoom()
+  if #auExtract.roomsToWalk == 0 then
+    auExtract.done()
+    return
+  end
+  auExtract.currentRoomTarget = table.remove(auExtract.roomsToWalk, 1)
+  mmp.gotoRoom(auExtract.currentRoomTarget.room)
+end
+
+function auExtract.onBalance()
+  if auExtract.isWalkingRooms then
+    auExtract.nextRoom()
+  end
+end
+
+registerNamedEventHandler("auExtract", "auExtract.onBalance", "svo balanceful ready", auExtract.onBalance)
+
+function auExtract.onRoomUpdate()
+  if auExtract.isRecording then
+    if auExtract.roomVisitedCache[mmp.currentroom] then return end
+    send("minerals")
+    return
+  elseif auExtract.isWalkingRooms and mmp.currentroom == auExtract.currentRoomTarget.room then
+    send("extract " .. auExtract.currentRoomTarget.mineral)
+  end
+end
+
+registerNamedEventHandler("auExtract", "auExtract.onRoomUpdate", "gmcp.Room.Info", auExtract.onRoomUpdate)
+
+function auExtract.recordRoom(mineral)
+  if not auExtract.isRecording or auExtract.roomVisitedCache[mmp.currentroom] then return end
+
+  local room = auExtract.createRoom(mineral)
+  table.insert(auExtract.settings.rooms, room)
+  table.insert(auExtract.settings.roomsVisited, mmp.currentroom)
+  auExtract.roomVisitedCache[mmp.currentroom] = true
+
+  cecho((
+    "\n&lt;gold&gt;AU:&lt;reset&gt; Recorded &lt;MediumSeaGreen&gt;%s&lt;reset&gt; [&lt;MediumSeaGreen&gt;%s&lt;reset&gt;] (&lt;violet_red&gt;%s&lt;reset&gt;) provides &lt;gold&gt;%s&lt;reset&gt; \n"
+    ):
+    format(mmp.currentroomname, room.room, room.area, room.mineral))
+  auExtract.save()
+end
+
+function auExtract.removeRoom(roomid)
+  local id = tonumber(roomid)
+  auExtract.removeRoomFromMap(id)
+  auExtract.removeRoomFromVisited(id)
+  auExtract.roomVisitedCache[id] = nil
+
+  auExtract.save()
+  cecho((
+    "\n&lt;gold&gt;AU:&lt;reset&gt; Removed &lt;MediumSeaGreen&gt;%s&lt;reset&gt; from the system \n"
+    ):
+    format(roomid))
+end
+
+function auExtract.removeRoomFromMap(roomid)
+  for i, roominfo in ipairs(auExtract.settings.rooms) do
+    if roominfo.room == roomid then
+      table.remove(auExtract.settings.rooms, i)
+      return
+    end
+  end
+end
+
+function auExtract.removeRoomFromVisited(roomid)
+  for i, roomnum in ipairs(auExtract.settings.roomsVisited) do
+    if roomnum == roomid then
+      table.remove(auExtract.settings.roomsVisited, i)
+      return
+    end
+  end
+end
+
+function auExtract.reset()
+  auExtract.settings.rooms = {}
+  auExtract.settings.roomsVisited = {}
+  auExtract.roomVisitedCache = {}
+  auExtract.save()
+  cecho("&lt;gold&gt;AU:&lt;reset&gt; All previously recorded rooms are deleted.\n")
+end
+
+function auExtract.save()
+  local saveFile = assert(io.open(auExtract.dataFile, "w+"))
+  saveFile:write(yajl.to_string(auExtract.settings))
+  saveFile:flush()
+  saveFile:close()
+end
+
+function auExtract.startCheckingMinerals()
+  if auExtract.isRecording then
+    auExtract.isCheckingMinerals = true
+  end
+end
+
+function auExtract.startRecording()
+  auExtract.isRecording = true
+  cecho("&lt;gold&gt;AU:&lt;reset&gt; Alright, recording rooms.\n")
+end
+
+function auExtract.stopCheckingMinerals()
+  auExtract.isCheckingMinerals = false
+end
+
+function auExtract.stopRecording()
+  auExtract.isRecording = false
+  cecho("&lt;gold&gt;AU:&lt;reset&gt; Done recording rooms.\n")
+end
+
+function auExtract.testRoom(mineral)
+  if not auExtract.isRecording or auExtract.roomVisitedCache[mmp.currentroom] then return end
+
+  auExtract.extracting = string.lower(mineral)
+  send("extract " .. auExtract.extracting)
+end
+
+function auExtract.toggleRecording()
+  if auExtract.isRecording then
+    auExtract.stopRecording()
+  else
+    auExtract.startRecording()
+  end
+end
+
+auExtract.load()</script>
+				<eventHandlerList />
+			</Script>
+		</ScriptGroup>
+	</ScriptPackage>
+	<KeyPackage />
+	<HelpPackage>
+		<helpURL></helpURL>
+	</HelpPackage>
+</MudletPackage>
